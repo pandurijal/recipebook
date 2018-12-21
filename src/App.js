@@ -1,25 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Search from "./components/Search";
+import Recipes from "./components/Recipes";
+import "./App.css";
+
+const API_KEY = "b6aef83e8433051ffdd6be59d1774cf6";
 
 class App extends Component {
+  state = {
+    recipes: []
+  };
+
+  getRecipes = async e => {
+    const getRecipes = e.target.elements.inputRecipes.value;
+    e.preventDefault();
+    const api_call = await fetch(
+      `https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${getRecipes}&count=6`
+    );
+    const data = await api_call.json();
+    this.setState({ recipes: data.recipes });
+    console.log(this.state);
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Search searchRecipes={this.getRecipes} />
+        <Recipes recipes={this.state.recipes} />
       </div>
     );
   }

@@ -1,32 +1,80 @@
+body {
+  background-color: #ecf0f1;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+img {
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.recipes-box h4,
+.recipe-box h4 {
+  font-size: 18px;
 }
 
-.App-link {
-  color: #61dafb;
+.recipes-box h5,
+.recipe-box h5 {
+  font-size: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.recipes-box .btn,
+.recipe-box .btn {
+  background-color: #e74c3c;
+  margin: 10px 0;
+  border-radius: 0;
+}
+
+.recipes-box .btn:hover,
+.recipe-box .btn:hover {
+  background-color: #c0392b;
+  margin: 10px 0;
+  border-radius: 0;
+}
+
+.recipes-box a,
+.recipe-box a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.recipes-box {
+  border: solid 1px #f2f2f2;
+  margin: 15px 0;
+  border-bottom: solid 3px #e74c3c;
+  background-color: #fff;
+}
+
+.recipe-box {
+  background-color: #fff;
+  width: 50%;
+  text-align: center;
+  margin: 15px auto;
+  padding-bottom: 15px;
+  border-bottom: solid 3px #e74c3c;
+}
+
+.recipes-box .img-box {
+  height: 200px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.recipe-box .img-box {
+}
+
+.recipes-box .content-box {
+  padding: 10px;
+}
+
+.recipe-box .content-box {
+}
+
+.recipe-box h4 {
+  font-size: 24px;
+  margin: 10px;
 }
